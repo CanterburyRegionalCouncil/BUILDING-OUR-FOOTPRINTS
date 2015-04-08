@@ -11,7 +11,6 @@ A mapping competition that was run for school students! Help build gis data for 
 
 News posts from our Canterbury Maps portal about building footprints
 
-
 [results](http://canterburymaps.govt.nz/building-our-footprints-competition-results)
 [during event](http://canterburymaps.govt.nz/building-footprints-competition-is-heating-up)
 [first post](http://canterburymaps.govt.nz/involving-kids-in-gis)
