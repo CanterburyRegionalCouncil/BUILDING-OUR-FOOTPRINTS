@@ -7,7 +7,7 @@ A mapping competition that was run for school students! Help build gis data for 
 
 ![image](http://canterburymaps.govt.nz/media/57db7f53-c0a7-480e-a50e-cc0059d1cf90)
 
-![image}(http://canterburymaps.govt.nz/media/d1cec92d-2a79-4e2c-9797-529793a33b34)
+![image](http://canterburymaps.govt.nz/media/d1cec92d-2a79-4e2c-9797-529793a33b34)
 
 News posts from our Canterbury Maps portal about building footprints
 
