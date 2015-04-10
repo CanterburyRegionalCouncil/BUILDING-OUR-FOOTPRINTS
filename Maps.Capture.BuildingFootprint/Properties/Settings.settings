@@ -1,0 +1,33 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Maps.Capture.BuildingFootprint.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ImpersonateUser" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SVC_GISIntegration</Value>
+    </Setting>
+    <Setting Name="ImpersonateDomain" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CH</Value>
+    </Setting>
+    <Setting Name="ImpersonatePwd" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">V8wapuD9</Value>
+    </Setting>
+    <Setting Name="Proxy" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">proxy.ashx</Value>
+    </Setting>
+    <Setting Name="debugMode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="WebMapIDCapture" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">9564bcee040c4195a64b900cdea1671d</Value>
+    </Setting>
+    <Setting Name="LeaderboardProcedure_School" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">pCrowdsourceRankingSchool</Value>
+    </Setting>
+    <Setting Name="LeaderboardProcedure_Person" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">pCrowdsourceRankingPerson</Value>
+    </Setting>
+    <Setting Name="EditLayerProxyPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">arcgisdev.ecan.govt.nz/arcgis/rest/services/Community/Building_Footprint_Capture/FeatureServer</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

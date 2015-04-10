@@ -1,0 +1,163 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LINZ.master.cs" Inherits="Maps.Capture.BuildingFootprint.LINZ" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <asp:PlaceHolder ID="PlaceHolder1" runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:BundleReference ID="Bundlereference1" runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <div class="container">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1 class="bfp_title">Building Our Footprints</h1>
+                    </div>
+                    <div class="col-md-6">
+                        <img runat="server" src="~/Content/images/BuildingOurFootprints_Header.png" class="img-responsive" alt="Responsive image" />
+                    </div>
+                </div>
+                <%--<div class="banner">
+            <div class="row">
+                <h1>Building Our Footprints</h1>
+            <div class="header"></div>
+            </div>
+        </div>--%>
+            </div>
+        </div>
+
+        <div class="navbar navbar-default ">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a id="A2" runat="server" href="~/">Home</a></li>
+                        <li><a id="A3" runat="server" href="~/About">The Rules</a></li>
+                        <li><a id="A8" runat="server" href="~/Prizes">Prizes</a></li>
+                        <li><a id="A10" runat="server" href="~/Content/Building Our Footprints Instructions.pdf" target="_blank">Instructions Document</a></li>
+                        <li><a id="A11" runat="server" href="~/InstructionVideo" target="_blank">Instructions Video</a></li>
+                        <%--<li><a id="A12" runat="server" href="~/Leaderboard">Leaderboard</a></li>--%>
+                        <li><a id="A12" runat="server" href="~/Results">Leaderboard</a></li>
+                        <% if (Context.User.Identity.IsAuthenticated)
+                           { %>
+                        <li><a id="A13" runat="server" href="~/CaptureMap">Start Mapping</a></li>
+                        <% } %>
+                    </ul>
+                    <asp:LoginView ID="LoginView1" runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a id="A5" runat="server" href="~/Account/Register">Register</a></li>
+                                <li><a id="A6" runat="server" href="~/Account/Login">Log in</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a id="A7" runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li>
+                                    <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                </li>
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>
+            </div>
+        </div>
+
+        <div class="container body-content">
+            <div class="row">
+                <div class="col-md-3 sidebar">
+                    <div id="logo">
+                        <img runat="server" src="~/Content/images/BuildingOurFootprints2.jpg" alt="Building Our Footprints" class="logo" />
+                    </div>
+                    <div id="contact">
+                        <h3>Contact Us:</h3>
+
+                        <p>
+                            0800 ONLINE<br />
+                            <a href="mailto:customersupport@linz.govt.nz">Email Us</a><br />
+
+                            <a href="http://www.facebook.com/buildingourfootprints" target="_blank"><span style="padding-top: 5px;" title="www.facebook.com/buildingourfootprints">FAQs available on
+                                <img runat="server" src="~/Content/images/facebook_30x30.png" alt="Facebook" /></span></a>
+                        </p>
+                    </div>
+
+                </div>
+                <div class="col-md-9 maincontent">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <hr />
+            <footer>
+                <div class="row">
+                    <div class="col-md-4" style="text-align: center;">
+                        <img runat="server" src="~/Content/images/LINZ_LOGO.png" alt="Land Information New Zealand" class="img-rounded img-logo" title="Land Information New Zealand" />
+                    </div>
+                    <div class="col-md-4" style="text-align: center;">
+                        <img runat="server" src="~/Content/images/ecan-logo.gif" alt="Environment Canterbury Regional Council" class="img-rounded img-logo" title="Environment Canterbury Regional Council" />
+                    </div>
+                    <div class="col-md-4" style="text-align: center;">
+                        <img runat="server" src="~/Content/images/UCLogo.jpg" alt="University of Canterbury" class="img-rounded img-logo" title="University of Canterbury" />
+                    </div>
+                </div>
+                <hr />
+                <div>
+                    <p xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
+                        <a rel="license"
+                            href="http://creativecommons.org/publicdomain/zero/1.0/">
+                            <img src="http://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" />
+                        </a>
+                        To the extent possible under law,
+  <a rel="dct:publisher"
+      href="http://canterburymaps.govt.nz/BuildingOurFootprints/">
+      <span property="dct:title">users of the Building Our Footprints website </span></a>
+                        have waived all copyright and related or neighboring rights to the
+  <span property="dct:title">Building Our Footprints Data</span>.
+This work is published from:
+                        <span property="vcard:Country" datatype="dct:ISO3166"
+                            content="NZ" about="http://canterburymaps.govt.nz/BuildingOurFootprints/">New Zealand</span>.
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
